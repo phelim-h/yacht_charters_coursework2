@@ -21,8 +21,8 @@ BEGIN
         -- Group Concat used to show the expected arrival as verification of visits.
         -- Output is now more useful.
         GROUP_CONCAT(
-                CONCAT(v.expected_arrival, ' (', v.duration,' night)')
-                SEPARATOR '; ') AS 'Expected Arrivals',
+            CONCAT(v.expected_arrival, ' (', v.duration,' night)')
+            SEPARATOR '; ') AS 'Expected Arrivals',
         SUM(v.duration) AS 'Total length of Stay'
     FROM YACHT y
              INNER JOIN CHARTER c
